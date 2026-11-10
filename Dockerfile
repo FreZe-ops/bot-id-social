@@ -7,7 +7,7 @@ ENV TZ=Asia/Ho_Chi_Minh \
     PYTHONIOENCODING=utf-8
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    tzdata \
+    tzdata libatomic1 \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && rm -rf /var/lib/apt/lists/*
 
