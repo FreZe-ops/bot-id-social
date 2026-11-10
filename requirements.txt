@@ -1,0 +1,6 @@
+python-telegram-bot[rate-limiter]==21.10
+motor==3.6.0
+pymongo>=4.9,<4.10
+httpx==0.28.1
+python-dotenv==1.0.1
+playwright

@@ -1,0 +1,22 @@
+services:
+  bot:
+    build: .
+    container_name: bot_id_social
+    restart: always
+    shm_size: "1gb"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017
+
+  mongo:
+    image: mongo:7.0
+    container_name: bot_mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
